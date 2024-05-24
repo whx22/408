@@ -1,7 +1,7 @@
-void quicksort(int q[], int l, int r) {
+void quick_sort(int q[], int l, int r) {
   if (l >= r)
     return;
-  int i = l - 1, j = r + 1, x = q[l + r >> 1];
+  int i = l - 1, j = r + 1, x = q[l + r >> 2];
   while (i < j) {
     do
       ++i;
@@ -12,6 +12,6 @@ void quicksort(int q[], int l, int r) {
     if (i < j)
       q[i] ^= q[j] ^= q[i] ^= q[j];
   }
-  quicksort(q, l, j);
-  quicksort(q, j + 1, r);
+  quick_sort(q, l, j);
+  quick_sort(q, j + 1, r);
 }
