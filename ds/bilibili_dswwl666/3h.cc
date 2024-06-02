@@ -15,7 +15,7 @@ int solution1(int A[], int B[], int C[], int n) {
 }
 
 void quicksort(int q[], int l, int r);
-int search(int q[], int n, int v);
+int bsearch(int q[], int n, int v);
 
 int solution2(int A[], int B[], int C[], int n) {
   int cnt = 0, p, q;
@@ -23,8 +23,8 @@ int solution2(int A[], int B[], int C[], int n) {
   quicksort(B, 0, n - 1);
   quicksort(C, 0, n - 1);
   for (int i = 0; i < n; ++i) {
-    p = search(A, n, B[i]);
-    q = search(C, n, B[i]);
+    p = bsearch(A, n, B[i]);
+    q = bsearch(C, n, B[i]);
     cnt += p * q;
   }
   return cnt;
