@@ -4,10 +4,10 @@ void quick_sort(int q[], int l, int r) {
   int i = l - 1, j = r + 1, x = q[l + r >> 1];
   while (i < j) {
     do
-      i++;
+      ++i;
     while (q[i] < x);
     do
-      j--;
+      --j;
     while (q[j] > x);
     if (i < j)
       q[i] ^= q[j] ^= q[i] ^= q[j];
